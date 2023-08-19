@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvoiceApi</name>
+    </assembly>
+    <members>
+        <member name="M:InvoiceApi.Controllers.InvoiceManagerController.Get(System.Int32)">
+            <summary>
+                Get a specific invoice by ID.
+            </summary>
+            
+            <remarks>
+                Sample **request**:
+                
+                GET /api/InvoiceManager/GetBy/1
+                
+                Return 
+                {
+                    UUID: 2,
+                    etc...
+                }
+            </remarks>
+            
+            <response code="200">Retrive one invoice by given UUID</response>
+            <response code="400">Server is down!</response>
+            <response code="404">Invoice not found</response>
+            
+            <param name="id">Value of specific ID of the invoice</param>
+        </member>
+        <member name="M:InvoiceApi.Controllers.InvoiceManagerController.Post(InvoiceApi.Models.InputInvoice)">
+            <summary>
+               Creates a new invoice entity using the provided JSON data and stores it in the database.
+            </summary>
+            
+            <remarks>
+                Sample **request**:
+                
+                POST /api/InvoiceManager/CreateInvoice
+                
+                Return 
+                {
+                    UUID: 2,
+                    etc...
+                }
+            </remarks>
+            
+            <response code="200">Retrive actual made invoice by given JSON</response>
+            <response code="400">Server is down! / Data types problem</response>
+            
+            <param name="value">Data of specific invoice to add to the database</param>
+        </member>
+        <member name="M:InvoiceApi.Controllers.InvoiceManagerController.Put(System.Int32,InvoiceApi.Models.InputInvoice)">
+            <summary>
+               Updates an existing invoice record identified by its UUID with the provided JSON data.
+            </summary>
+            
+            <remarks>
+                Sample **request**:
+                
+                PUT /api/InvoiceManager/UpdateBy/{id}
+                
+                Return 
+                {
+                    UUID: 2,
+                    etc...
+                }
+            </remarks>
+            
+            <response code="200">Retrive actual made invoice by given JSON</response>
+            <response code="400">Server is down! / Data types problem</response>
+            <response code="404">Invoice entity not found</response>
+            
+            <param name="id">Value of specific ID of the invoice</param>
+            <param name="value">Data of specific invoice to add to the database</param>
+        </member>
+        <member name="M:InvoiceApi.Controllers.InvoiceManagerController.Delete(System.Int32)">
+            <summary>
+               Deletes an existing invoice record identified by its UUID.
+            </summary>
+            
+            <remarks>
+                Sample **request**:
+                
+                DELETE /api/InvoiceManager/DeleteBy/{id}
+                
+                Return 
+                {
+                    UUID: 2,
+                    etc...
+                }
+            </remarks>
+            
+            <response code="200">Retrive id of deleted invoice</response>
+            <response code="400">Server is down! / Data types problem</response>
+            <response code="404">Invoice entity not found</response>
+            
+            <param name="id">Value of specific ID of the invoice</param>
+        </member>
+    </members>
+</doc>
